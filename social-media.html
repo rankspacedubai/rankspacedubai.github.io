@@ -86,6 +86,14 @@
     .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
     footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);text-align:center;font-size:14px;}
     @media(max-width:900px){.nav-links{display:none;}.cta-box{padding:40px 24px;}}
+
+    .other-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+    .other-service-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;transition:.3s;display:block;}
+    .other-service-card:hover{border-color:rgba(108,99,255,.4);transform:translateY(-4px);}
+    .other-service-card .os-icon{font-size:30px;margin-bottom:12px;}
+    .other-service-card h4{font-size:17px;margin-bottom:6px;}
+    .other-service-card p{color:var(--muted);font-size:13px;}
+    .other-service-card .os-link{color:var(--primary2);font-size:13px;font-weight:600;margin-top:12px;display:block;}
   </style>
 </head>
 <body>
@@ -261,6 +269,35 @@
         <a href="https://wa.me/971567620828" class="btn btn-primary">Chat on WhatsApp</a>
         <a href="mailto:hello@rankspace.ae" class="btn btn-outline">Send Email</a>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding:60px 0;">
+  <div class="container">
+    <div class="section-label">Explore More</div>
+    <h2>Other Services</h2>
+    <p class="section-sub">Everything your business needs to grow online — all under one roof.</p>
+    <div class="other-services">
+      <a href="website-design.html" class="other-service-card">
+        <div class="os-icon">🌐</div>
+        <h4>Website Design</h4>
+        <p>Fast, modern, mobile-friendly websites built to convert visitors into customers.</p>
+        <span class="os-link">Explore →</span>
+      </a>
+      <a href="seo.html" class="other-service-card">
+        <div class="os-icon">📈</div>
+        <h4>SEO Optimization</h4>
+        <p>Rank higher on Google and bring long-term organic traffic to your business.</p>
+        <span class="os-link">Explore →</span>
+      </a>
+      <a href="paid-ads.html" class="other-service-card">
+        <div class="os-icon">🎯</div>
+        <h4>Paid Ads</h4>
+        <p>Meta and Google ads focused on leads, conversions, and measurable ROI.</p>
+        <span class="os-link">Explore →</span>
+      </a>
     </div>
   </div>
 </section>
