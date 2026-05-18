@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEO Services Dubai | Rankspace</title>
+  <meta name="description" content="Professional SEO services in Dubai. On-page, off-page, local SEO, technical SEO. See our packages and how we rank Dubai businesses on Google."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{--bg:#0b1020;--card:#11182e;--text:#ffffff;--muted:#aab3c5;--primary:#6C63FF;--primary2:#8B84FF;--border:rgba(255,255,255,.08);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    .container{width:min(1200px,92%);margin:auto;}
+    nav{position:fixed;top:0;left:0;width:100%;z-index:1000;backdrop-filter:blur(16px);background:rgba(11,16,32,.75);border-bottom:1px solid var(--border);}
+    .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 0;}
+    .logo{font-size:26px;font-weight:800;letter-spacing:-1px;}
+    .logo span{color:var(--primary);}
+    .nav-links{display:flex;gap:28px;align-items:center;}
+    .nav-links a{color:var(--muted);font-size:15px;transition:.3s;}
+    .nav-links a:hover{color:#fff;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:14px;font-weight:600;transition:.3s ease;}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:0 15px 40px rgba(108,99,255,.35);}
+    .btn-primary:hover{transform:translateY(-2px);}
+    .btn-outline{border:1px solid var(--border);color:#fff;}
+    .btn-sm{padding:10px 20px;font-size:14px;border-radius:10px;}
+    .page-hero{padding:140px 0 80px;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:rgba(108,99,255,.12);filter:blur(120px);top:-150px;right:-100px;z-index:-1;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:24px;}
+    .breadcrumb a{color:var(--primary2);}
+    .page-hero h1{font-size:clamp(42px,6vw,72px);line-height:1.05;letter-spacing:-3px;margin-bottom:20px;}
+    .page-hero h1 span{color:var(--primary2);}
+    .page-hero p{color:var(--muted);font-size:18px;max-width:680px;margin-bottom:36px;}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+    .hero-tag{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);color:#d8d5ff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;}
+    section{padding:80px 0;}
+    .section-label{color:var(--primary2);font-size:13px;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:14px;}
+    h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin-bottom:16px;}
+    .section-sub{color:var(--muted);font-size:16px;max-width:680px;margin-bottom:50px;}
+
+    /* SEO Type Cards */
+    .seo-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
+    .seo-type{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:30px;transition:.3s;}
+    .seo-type:hover{border-color:rgba(108,99,255,.35);transform:translateY(-4px);}
+    .seo-type .icon{font-size:36px;margin-bottom:16px;}
+    .seo-type h3{font-size:20px;margin-bottom:10px;}
+    .seo-type p{color:var(--muted);font-size:14px;margin-bottom:18px;}
+    .seo-includes{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .seo-includes li{font-size:13px;color:#c5cfe0;display:flex;gap:8px;}
+    .seo-includes li::before{content:'→';color:var(--primary2);font-weight:700;flex-shrink:0;}
+
+    /* Pricing Table */
+    .pricing-table{width:100%;border-collapse:collapse;margin-top:10px;}
+    .pricing-table th{background:rgba(108,99,255,.15);padding:16px 20px;text-align:left;font-size:14px;font-weight:700;color:#d8d5ff;border-bottom:1px solid var(--border);}
+    .pricing-table td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;color:var(--muted);}
+    .pricing-table tr:last-child td{border-bottom:none;}
+    .pricing-table tr:hover td{background:rgba(255,255,255,.02);}
+    .pricing-table .price-val{color:#fff;font-weight:700;font-size:16px;}
+    .pricing-table .check{color:#4ade80;font-size:16px;}
+    .pricing-table .cross{color:#f87171;font-size:16px;}
+    .table-wrap{background:var(--card);border:1px solid var(--border);border-radius:24px;overflow:hidden;}
+
+    /* Timeline */
+    .timeline{display:flex;flex-direction:column;gap:0;max-width:720px;}
+    .timeline-item{display:grid;grid-template-columns:60px 1fr;gap:24px;position:relative;}
+    .timeline-item:not(:last-child)::after{content:'';position:absolute;left:29px;top:52px;bottom:-20px;width:2px;background:rgba(108,99,255,.2);}
+    .timeline-dot{width:58px;height:58px;border-radius:50%;background:rgba(108,99,255,.15);border:2px solid rgba(108,99,255,.3);display:grid;place-items:center;font-size:22px;flex-shrink:0;}
+    .timeline-content{padding:10px 0 30px;}
+    .timeline-month{color:var(--primary2);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+    .timeline-content h4{font-size:18px;margin-bottom:8px;}
+    .timeline-content p{color:var(--muted);font-size:14px;}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:14px;max-width:800px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+    .faq-q{padding:22px 26px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:16px;}
+    .faq-q::after{content:'+';color:var(--primary2);font-size:22px;font-weight:300;transition:.3s;}
+    .faq-item.open .faq-q::after{content:'−';}
+    .faq-a{max-height:0;overflow:hidden;transition:.35s ease;color:var(--muted);font-size:15px;}
+    .faq-item.open .faq-a{max-height:200px;}
+    .faq-a-inner{padding:0 26px 22px;}
+
+    .cta-box{background:linear-gradient(135deg,#151f3a,#10172b);border:1px solid rgba(108,99,255,.25);border-radius:32px;padding:60px;text-align:center;}
+    .cta-box h2{font-size:clamp(30px,4vw,52px);margin-bottom:16px;letter-spacing:-2px;}
+    .cta-box p{color:var(--muted);max-width:600px;margin:0 auto 32px;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);text-align:center;font-size:14px;}
+    @media(max-width:900px){.nav-links{display:none;}.cta-box{padding:40px 24px;}.pricing-table th:nth-child(n+3),.pricing-table td:nth-child(n+3){display:none;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">Rank<span>space</span></a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#results">Results</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://wa.me/971567620828" class="btn btn-primary btn-sm">WhatsApp Us</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>SEO Optimization</span></div>
+    <h1>Rank Higher on <br><span>Google Dubai</span></h1>
+    <p>We help Dubai businesses get found by the right customers through strategic SEO — more organic traffic, more leads, more revenue without paying for every click.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">📍 Local SEO</span>
+      <span class="hero-tag">🔍 On-Page SEO</span>
+      <span class="hero-tag">🔗 Link Building</span>
+      <span class="hero-tag">⚙️ Technical SEO</span>
+      <span class="hero-tag">📊 Monthly Reporting</span>
+    </div>
+    <a href="https://wa.me/971567620828" class="btn btn-primary">Get Free SEO Audit</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">What We Cover</div>
+    <h2>Our SEO Services</h2>
+    <p class="section-sub">We cover every dimension of SEO to give your business the best chance of ranking at the top of Google search results in Dubai and the UAE.</p>
+    <div class="seo-types">
+
+      <div class="seo-type">
+        <div class="icon">📍</div>
+        <h3>Local SEO</h3>
+        <p>Dominate Google Maps and local search results. Essential for any Dubai business with a physical location.</p>
+        <ul class="seo-includes">
+          <li>Google Business Profile optimization</li>
+          <li>Local citations & directories</li>
+          <li>Google Maps ranking</li>
+          <li>Reviews strategy</li>
+          <li>NAP consistency audit</li>
+        </ul>
+      </div>
+
+      <div class="seo-type">
+        <div class="icon">🔍</div>
+        <h3>On-Page SEO</h3>
+        <p>Optimize every page of your website so Google clearly understands what you offer and who you serve.</p>
+        <ul class="seo-includes">
+          <li>Keyword research & mapping</li>
+          <li>Meta titles & descriptions</li>
+          <li>Header structure (H1–H6)</li>
+          <li>Content optimization</li>
+          <li>Internal linking strategy</li>
+        </ul>
+      </div>
+
+      <div class="seo-type">
+        <div class="icon">⚙️</div>
+        <h3>Technical SEO</h3>
+        <p>Fix the hidden issues that prevent Google from properly crawling and ranking your website.</p>
+        <ul class="seo-includes">
+          <li>Site speed optimization</li>
+          <li>Mobile-friendliness audit</li>
+          <li>Core Web Vitals fixes</li>
+          <li>XML sitemap & robots.txt</li>
+          <li>Broken links & redirects</li>
+        </ul>
+      </div>
+
+      <div class="seo-type">
+        <div class="icon">🔗</div>
+        <h3>Off-Page / Link Building</h3>
+        <p>Build your site's authority through quality backlinks from trusted, relevant Dubai and UAE websites.</p>
+        <ul class="seo-includes">
+          <li>High-DA backlink outreach</li>
+          <li>Guest posting</li>
+          <li>Local directory submissions</li>
+          <li>Competitor backlink analysis</li>
+          <li>Brand mentions monitoring</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Packages & Pricing</div>
+    <h2>SEO Plans for Dubai Businesses</h2>
+    <p class="section-sub">Transparent monthly pricing with no hidden fees. All plans include monthly reporting so you see exactly what we've done.</p>
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>What's Included</th>
+            <th>Starter<br><span style="color:#fff;font-size:16px;">AED 299/mo</span></th>
+            <th>Growth<br><span style="color:#fff;font-size:16px;">AED 349/mo</span></th>
+            <th>Authority<br><span style="color:#fff;font-size:16px;">AED 399/mo</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Keywords Targeted</td><td>5–10</td><td>15–25</td><td>40+</td></tr>
+          <tr><td>On-Page SEO</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Technical SEO Audit</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Google Business Optimization</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Monthly Content (Blog Posts)</td><td class="cross">✗</td><td>2 posts</td><td>4 posts</td></tr>
+          <tr><td>Link Building (Backlinks/mo)</td><td class="cross">✗</td><td>3–5</td><td>8–12</td></tr>
+          <tr><td>Competitor Analysis</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Monthly Reporting</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Strategy Call</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓ Monthly</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">What to Expect</div>
+    <h2>SEO Results Timeline</h2>
+    <p class="section-sub">SEO is a long-term investment. Here's a realistic look at what to expect month by month.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">🔍</div>
+        <div class="timeline-content">
+          <div class="timeline-month">Month 1</div>
+          <h4>Audit & Foundation</h4>
+          <p>Full technical audit, keyword research, competitor analysis, and on-page fixes across all pages.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">⚙️</div>
+        <div class="timeline-content">
+          <div class="timeline-month">Month 2–3</div>
+          <h4>Optimization & Content</h4>
+          <p>Content optimization, Google Business improvements, and initial link building begin to take effect.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">📈</div>
+        <div class="timeline-content">
+          <div class="timeline-month">Month 4–6</div>
+          <h4>Rankings Begin Rising</h4>
+          <p>Keywords start moving up in rankings. Traffic increases gradually. First leads from organic search.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">🏆</div>
+        <div class="timeline-content">
+          <div class="timeline-month">Month 6+</div>
+          <h4>Consistent Growth</h4>
+          <p>Steady organic traffic growth, more keywords ranking on page 1, compounding returns over time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long before I see SEO results?</div>
+        <div class="faq-a"><div class="faq-a-inner">Most businesses start seeing noticeable ranking improvements between months 3–6. SEO is a long-term strategy — the results compound and grow over time, unlike paid ads which stop the moment you stop paying.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you guarantee first page rankings?</div>
+        <div class="faq-a"><div class="faq-a-inner">No ethical SEO agency can guarantee specific rankings since Google's algorithm is outside anyone's control. We do guarantee consistent, professional work following Google's best practices that builds lasting organic visibility.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is SEO worth it for a small business in Dubai?</div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. Local SEO in particular is extremely valuable for small businesses — ranking on Google Maps for searches like "salon near me" or "restaurant in JBR" drives highly targeted customers who are ready to buy.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What reports do I receive?</div>
+        <div class="faq-a"><div class="faq-a-inner">You receive a monthly report showing keyword rankings, organic traffic changes, work completed that month, and the plan for the next month. Full transparency, always.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-box">
+      <h2>Start Ranking on Google Today</h2>
+      <p>Get a free SEO audit of your website. We'll show you exactly what's holding your rankings back and how we can fix it.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/971567620828" class="btn btn-primary">Get Free SEO Audit</a>
+        <a href="mailto:hello@rankspace.ae" class="btn btn-outline">Send Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Rankspace Digital Agency · Dubai, UAE</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

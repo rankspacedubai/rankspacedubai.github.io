@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Design Dubai | Rankspace</title>
+  <meta name="description" content="Professional website design services in Dubai. WordPress, Shopify, Webflow and custom websites. See pricing, pros & cons of each platform."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --bg:#0b1020;--card:#11182e;--text:#ffffff;
+      --muted:#aab3c5;--primary:#6C63FF;--primary2:#8B84FF;--border:rgba(255,255,255,.08);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    .container{width:min(1200px,92%);margin:auto;}
+
+    nav{position:fixed;top:0;left:0;width:100%;z-index:1000;backdrop-filter:blur(16px);background:rgba(11,16,32,.75);border-bottom:1px solid var(--border);}
+    .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 0;}
+    .logo{font-size:26px;font-weight:800;letter-spacing:-1px;}
+    .logo span{color:var(--primary);}
+    .nav-links{display:flex;gap:28px;align-items:center;}
+    .nav-links a{color:var(--muted);font-size:15px;transition:.3s;}
+    .nav-links a:hover{color:#fff;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:14px;font-weight:600;transition:.3s ease;}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:0 15px 40px rgba(108,99,255,.35);}
+    .btn-primary:hover{transform:translateY(-2px);}
+    .btn-outline{border:1px solid var(--border);color:#fff;}
+    .btn-sm{padding:10px 20px;font-size:14px;border-radius:10px;}
+
+    /* Hero */
+    .page-hero{padding:140px 0 80px;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:rgba(108,99,255,.12);filter:blur(120px);top:-150px;right:-100px;z-index:-1;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:24px;}
+    .breadcrumb a{color:var(--primary2);}
+    .page-hero h1{font-size:clamp(42px,6vw,72px);line-height:1.05;letter-spacing:-3px;margin-bottom:20px;}
+    .page-hero h1 span{color:var(--primary2);}
+    .page-hero p{color:var(--muted);font-size:18px;max-width:680px;margin-bottom:36px;}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+    .hero-tag{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);color:#d8d5ff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;}
+
+    /* Sections */
+    section{padding:80px 0;}
+    .section-label{color:var(--primary2);font-size:13px;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:14px;}
+    h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin-bottom:16px;}
+    .section-sub{color:var(--muted);font-size:16px;max-width:680px;margin-bottom:50px;}
+
+    /* CMS Cards */
+    .cms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+    .cms-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px;transition:.3s;}
+    .cms-card:hover{border-color:rgba(108,99,255,.35);transform:translateY(-4px);}
+    .cms-card.recommended{border-color:rgba(108,99,255,.4);box-shadow:0 10px 40px rgba(108,99,255,.12);}
+    .cms-icon{font-size:36px;margin-bottom:18px;}
+    .cms-card h3{font-size:22px;margin-bottom:6px;}
+    .cms-badge{display:inline-block;background:rgba(108,99,255,.15);color:#d8d5ff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;}
+    .cms-price{font-size:28px;font-weight:800;letter-spacing:-1px;color:var(--primary2);margin-bottom:6px;}
+    .cms-price span{font-size:14px;font-weight:500;color:var(--muted);}
+    .cms-desc{color:var(--muted);font-size:14px;margin-bottom:20px;}
+
+    /* Pros/Cons */
+    .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;}
+    .pros h4,.cons h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+    .pros h4{color:#4ade80;}
+    .cons h4{color:#f87171;}
+    .pro-item,.con-item{font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);color:var(--muted);}
+    .pro-item::before{content:'✓ ';color:#4ade80;font-weight:700;}
+    .con-item::before{content:'✗ ';color:#f87171;font-weight:700;}
+
+    /* Best For */
+    .best-for{background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.15);border-radius:12px;padding:14px 18px;font-size:13px;color:#d8d5ff;margin-bottom:20px;}
+    .best-for strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--primary2);margin-bottom:4px;}
+
+    /* Process */
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;counter-reset:step;}
+    .step{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;position:relative;counter-increment:step;}
+    .step::before{content:counter(step);position:absolute;top:-14px;left:24px;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:100px;}
+    .step h4{font-size:17px;margin-bottom:8px;}
+    .step p{color:var(--muted);font-size:14px;}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:14px;max-width:800px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+    .faq-q{padding:22px 26px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:16px;}
+    .faq-q::after{content:'+';color:var(--primary2);font-size:22px;font-weight:300;transition:.3s;}
+    .faq-item.open .faq-q::after{content:'−';}
+    .faq-a{max-height:0;overflow:hidden;transition:.35s ease;color:var(--muted);font-size:15px;}
+    .faq-item.open .faq-a{max-height:200px;}
+    .faq-a-inner{padding:0 26px 22px;}
+
+    /* CTA */
+    .cta-box{background:linear-gradient(135deg,#151f3a,#10172b);border:1px solid rgba(108,99,255,.25);border-radius:32px;padding:60px;text-align:center;}
+    .cta-box h2{font-size:clamp(30px,4vw,52px);margin-bottom:16px;letter-spacing:-2px;}
+    .cta-box p{color:var(--muted);max-width:600px;margin:0 auto 32px;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+    footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);text-align:center;font-size:14px;}
+    .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary2);font-size:14px;font-weight:600;margin-bottom:10px;}
+
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .pros-cons{grid-template-columns:1fr;}
+      .cta-box{padding:40px 24px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">Rank<span>space</span></a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#results">Results</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://wa.me/971567620828" class="btn btn-primary btn-sm">WhatsApp Us</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> <span>Website Design</span>
+    </div>
+    <h1>Website Design <br><span>That Converts</span></h1>
+    <p>We build fast, modern, mobile-first websites for Dubai businesses — from simple landing pages to full e-commerce stores. Choose the platform that fits your goals and budget.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">🌐 WordPress</span>
+      <span class="hero-tag">🛒 Shopify</span>
+      <span class="hero-tag">✦ Webflow</span>
+      <span class="hero-tag">⚙️ Custom HTML/CSS</span>
+      <span class="hero-tag">📱 Mobile Responsive</span>
+      <span class="hero-tag">⚡ Speed Optimized</span>
+    </div>
+    <a href="https://wa.me/971567620828" class="btn btn-primary">Get Free Website Consultation</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Platforms We Build On</div>
+    <h2>Which CMS Is Right For You?</h2>
+    <p class="section-sub">Every business is different. Here's a detailed breakdown of each platform — pricing, pros, cons, and who it's best for.</p>
+
+    <div class="cms-grid">
+
+      <!-- WordPress -->
+      <div class="cms-card recommended">
+        <div class="cms-icon">🌐</div>
+        <div class="cms-badge">Most Popular</div>
+        <h3>WordPress</h3>
+        <div class="cms-price">AED 299 <span>/ starting from</span></div>
+        <p class="cms-desc">The world's #1 CMS. Powers 43% of all websites. Perfect for blogs, business sites, portfolios, and service companies.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <div class="pro-item">Fully customizable</div>
+            <div class="pro-item">Thousands of plugins</div>
+            <div class="pro-item">Strong SEO capabilities</div>
+            <div class="pro-item">Easy content editing</div>
+            <div class="pro-item">Large developer community</div>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <div class="con-item">Requires regular updates</div>
+            <div class="con-item">Can slow down with plugins</div>
+            <div class="con-item">Needs security maintenance</div>
+          </div>
+        </div>
+        <div class="best-for"><strong>Best For</strong>Restaurants, salons, real estate, service businesses, blogs, portfolios</div>
+        <a href="https://wa.me/971567620828" class="btn btn-primary" style="width:100%;justify-content:center;">Get WordPress Site</a>
+      </div>
+
+      <!-- Shopify -->
+      <div class="cms-card">
+        <div class="cms-icon">🛒</div>
+        <h3>Shopify</h3>
+        <div class="cms-price">AED 349 <span>/ starting from</span></div>
+        <p class="cms-desc">The best platform for online stores. Built specifically for e-commerce with payments, inventory, and shipping built in.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <div class="pro-item">Built-in payment gateway</div>
+            <div class="pro-item">Easy product management</div>
+            <div class="pro-item">Reliable & secure hosting</div>
+            <div class="pro-item">Multi-currency support</div>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <div class="con-item">Monthly subscription fee</div>
+            <div class="con-item">Transaction fees apply</div>
+            <div class="con-item">Limited design flexibility</div>
+            <div class="con-item">Less suited for non-stores</div>
+          </div>
+        </div>
+        <div class="best-for"><strong>Best For</strong>Online stores, retail brands, fashion, electronics, consumer products</div>
+        <a href="https://wa.me/971567620828" class="btn btn-primary" style="width:100%;justify-content:center;">Get Shopify Store</a>
+      </div>
+
+      <!-- Webflow -->
+      <div class="cms-card">
+        <div class="cms-icon">✦</div>
+        <h3>Webflow</h3>
+        <div class="cms-price">AED 399 <span>/ starting from</span></div>
+        <p class="cms-desc">A designer's dream — pixel-perfect animations and layouts without writing a single line of code. Premium visual results.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <div class="pro-item">Stunning animations</div>
+            <div class="pro-item">Pixel-perfect design</div>
+            <div class="pro-item">Fast load speeds</div>
+            <div class="pro-item">Built-in CMS</div>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <div class="con-item">Higher design cost</div>
+            <div class="con-item">Steeper learning curve</div>
+            <div class="con-item">Monthly hosting required</div>
+            <div class="con-item">Fewer plugins than WP</div>
+          </div>
+        </div>
+        <div class="best-for"><strong>Best For</strong>Agencies, SaaS companies, premium brands, design-forward businesses</div>
+        <a href="https://wa.me/971567620828" class="btn btn-primary" style="width:100%;justify-content:center;">Get Webflow Site</a>
+      </div>
+
+      <!-- Custom -->
+      <div class="cms-card">
+        <div class="cms-icon">⚙️</div>
+        <h3>Custom HTML/CSS</h3>
+        <div class="cms-price">AED 299 <span>/ starting from</span></div>
+        <p class="cms-desc">100% hand-coded websites. Ultra-fast, lightweight, and built exactly to your specifications. No bloat, no plugins.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <div class="pro-item">Fastest load speed</div>
+            <div class="pro-item">Zero plugin dependency</div>
+            <div class="pro-item">Fully unique design</div>
+            <div class="pro-item">No monthly platform fee</div>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <div class="con-item">Harder to self-edit</div>
+            <div class="con-item">Updates need developer</div>
+            <div class="con-item">No built-in blog/store</div>
+          </div>
+        </div>
+        <div class="best-for"><strong>Best For</strong>Landing pages, portfolios, small business brochure sites, one-pagers</div>
+        <a href="https://wa.me/971567620828" class="btn btn-primary" style="width:100%;justify-content:center;">Get Custom Site</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Our Process</div>
+    <h2>How We Build Your Website</h2>
+    <p class="section-sub">A clear, transparent process from brief to launch — typically completed in 7–14 days.</p>
+    <div class="process-steps">
+      <div class="step"><h4>Discovery Call</h4><p>We understand your business, goals, target audience, and competitors.</p></div>
+      <div class="step"><h4>Design Mockup</h4><p>We create a visual design for your approval before any development begins.</p></div>
+      <div class="step"><h4>Development</h4><p>We build your website on the agreed platform with all features and integrations.</p></div>
+      <div class="step"><h4>Review & Revisions</h4><p>You review the live preview and request any changes — 2 rounds included.</p></div>
+      <div class="step"><h4>Go Live</h4><p>We launch your site, set up Google Search Console, and hand over access.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to build a website?</div>
+        <div class="faq-a"><div class="faq-a-inner">Most websites are delivered within 7–14 business days depending on the complexity and how quickly you provide content (text, images, logo).</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to buy hosting and domain separately?</div>
+        <div class="faq-a"><div class="faq-a-inner">Yes — domain and hosting are purchased separately. We guide you through the process and can even set it up on your behalf. Typical costs are AED 50–200/year for a domain and AED 200–600/year for hosting.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I update the website myself after it's built?</div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! WordPress and Shopify sites are built so you can easily update text, images, and content yourself. We also provide a short handover tutorial.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is SEO included in the website package?</div>
+        <div class="faq-a"><div class="faq-a-inner">Basic on-page SEO (meta titles, descriptions, image alt tags, sitemap) is included in all packages. Advanced SEO is available as an add-on service.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I already have a website and want a redesign?</div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely, we do redesigns too. Share your current site with us and we'll assess what needs improving and provide a custom quote.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to Launch Your Website?</h2>
+      <p>Get a free consultation and quote for your website. We'll recommend the best platform for your business within 24 hours.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/971567620828" class="btn btn-primary">Chat on WhatsApp</a>
+        <a href="mailto:hello@rankspace.ae" class="btn btn-outline">Send Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Rankspace Digital Agency · Dubai, UAE</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
